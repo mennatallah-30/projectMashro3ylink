@@ -1,0 +1,124 @@
+<div *ngFor="let x of linkDetails">
+  <div class="m-3 border container-fluid g-0 p-2 " [style.background-color]="x.background_color"  >
+  
+      <div class="row g-0">
+        
+  
+          <div class="col-md-2 d-flex justify-content-center align-items-center">
+            
+             <i class= "{{x.icon}}"></i>
+          </div>
+          
+  
+          <div class="col ps-2">
+  
+              <div class="row g-0">
+  
+                  <div class="col-md-10 text-center">
+                      <span style="color: #4c547d;"></span>
+                  </div> 
+  
+                  <div class="col-md-2 d-flex justify-content-center align-items-center">
+                      <div class="btn-group" role="group">
+                          <button  type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#editForm"
+                              ><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button onclick="" (click)="deletebutton(x.id)"  type="button" class="btn btn-outline-danger"
+                           
+                              ><i class="fa-solid fa-trash-can"></i></button>
+                      </div>
+                  </div>
+  
+              </div>
+  
+              <div class="row g-0 mt-3">
+  
+                  <div class="col-md">
+  
+                      <table class="table table-hover mx-auto">
+                          <thead class="text-center fs-5 fst-italic text-secondary">
+                           
+                          </thead>
+                          <tbody >
+                              <tr>
+                                  <td>Social Media Name</td>
+                                  <td style="color: #4c547d;">{{x.title}}</td>
+                              </tr>
+                              <tr>
+                                  <td>Social Media Link</td>
+                                  <td style="color: #4c547d;">{{x.link}}</td>
+                              </tr>
+                            
+                          </tbody>
+                      </table>
+  
+                  </div>
+  
+                
+  
+              </div>
+  
+          </div>
+  
+      </div>
+  
+  </div>
+  </div>
+  
+  
+  
+  <!-- EditForm -->
+  
+  
+    
+    
+    <div class="modal fade" id="editForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editForm">Edit Link</h5>
+            <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="EditForm" (ngSubmit)="allData(x.id,EditForm)" let x of linkDetails   >
+        
+              <select formControlName="icon">
+      
+                <option class= selected>Open this select menu</option>
+                <option value="<i class=fa-brands fa-facebook-f></i>">
+                facebook 
+              </option>
+                <option value="fa-brands fa-twitter">Twitter</option>
+                <option value="fa-brands fa-youtube">Youtube</option>
+                <option value="fa-brands fa-instagram">Instagram</option>
+                <option value="fa-brands fa-whatsapp">Whatsapp</option>
+                <option value="fa-brands fa-linkedin">LinkedIn</option>
+              </select>
+                
+              <div class="row">
+                  <div class="col  form-group">
+                    <label for="name"  class="m-1 form-label">Link name</label>
+                    <input type="text"   class="m-1 form-control" placeholder="ex:facebook" formControlName="title">
+                  </div>
+                </div>
+              <div class="row">
+                  <div class="col">
+                    <label for="name" class="m-1 form-label">Link</label>
+                    <input type="text"  class="m-1 form-control" placeholder="https://www.example.com" formControlName="link">
+                  </div>
+                </div>
+                <div class="modal-footer">
+            <label for="exampleColorInput" class="form-label">background color</label>
+            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color" formControlName="background_color">
+              
+  
+            
+                  <button    type="submit" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"> save new data</button>
+            
+                </div>
+            </form>
+          
+        
+        </div>
+        </div>
+      </div>
+    </div>

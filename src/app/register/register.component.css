@@ -1,0 +1,95 @@
+*{
+    background-color:white !important;
+    color:black;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    cursor:pointer; 
+}
+
+body{
+    
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    height: 40rem;
+    width: 28rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(225, 225, 225, 0.06);
+    box-shadow: 0 8px 32px 0 rgb(31, 38,135,.37);
+    border-radius: 30px;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    
+}
+form img{
+    translate: none;
+
+   border-radius: 20%;
+    width:150px;
+    margin:3px;
+}
+form .a i{
+    color:aqua;
+}
+
+
+   
+
+h1{
+    font-size:50px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0.2);
+    letter-spacing: 3px;
+    margin-bottom:5%;
+    
+}
+
+label{
+    opacity: .8;
+    text-shadow: 2px 2px 4px rgba(0,0,0.2);
+}
+input{
+    width: 80%;
+    margin: 5% auto;
+    margin-bottom: 8%;
+    border: none;
+    outline:none;
+    background: transparent;
+    color: rgb(7, 0, 0);
+    border-bottom: 1px solid rgba(5, 0, 0, 0.6);
+    opacity: .8;
+    
+}
+button{
+    width:50%;
+    margin:3% auto;
+    color: rgb(110, 88, 88);
+    font-size: 15px;
+    opacity: .7;
+    background: rgba(225, 225, 225, 0.06);
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255,0.2);
+    box-shadow: 3px 3px 5px rgba(31,38,135,.2.37);
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+}
+
+button{
+    background: #5997c3;
+    border: 1px solid #5997c3;
+}
+
+img{
+    margin: 2px;
+}

@@ -1,0 +1,53 @@
+
+
+
+ <body>
+  
+    <form [formGroup]="registrationForm" (ngSubmit)="sendData(registrationForm)">
+      
+      
+     
+
+      <img src="../../assets/imge/logo .png">
+   
+  
+        <label>username</label>
+        <input formControlName="username" >
+
+        <p *ngIf="registrationForm.controls['username']?.errors?.['required']&& registrationForm.controls['username'].touched" class="text-danger"> you must put username
+        
+        </p>
+        <p *ngIf="registrationForm.controls['username']?.errors?.['minlength']&& registrationForm.controls['username'].touched" class="text-danger" > First Name must be at least 3 charcters
+        
+        </p>
+        <p *ngIf="registrationForm.controls['username']?.errors?.['maxlength']&& registrationForm.controls['username'].touched" class="text-danger" > First Name must be at most 10 charcters
+        
+        
+        </p>
+    
+    
+    
+        <label>password</label>
+        <input formControlName="password" type="password" >
+        <p *ngIf="registrationForm.controls['password']?.errors?.['required']&& registrationForm.controls['password'].touched" class="text-danger"> you must put your Password
+        
+        </p>
+        <p *ngIf="registrationForm.controls['password']?.errors?.['minlength']&& registrationForm.controls['password'].touched" class="text-danger" >password must be at least 10 charecters</p>
+        
+        <h4 class="text-danger">{{apiresponse}}</h4>
+    
+      <button>login</button>
+
+    
+   
+    
+    <a class="p-2">forget password?</a>
+    <a class="p-2"> sign up</a>
+
+
+      
+
+    
+    
+    </form>
+    </body>

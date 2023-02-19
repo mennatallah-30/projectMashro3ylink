@@ -1,0 +1,363 @@
+
+<body>
+  <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div  id="sidebar-wrapper">
+          <div class=" sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                  <img src="../../assets/imge/msg967261889-974.jpg"></div>
+          <div class="list-group list-group-flush my-3">
+
+            <button type=" button" class="m-2 btn btn-outline-danger" (click)="GOUSER()">
+              <i class="fa-solid fa-house-user"></i> Home
+         </button>
+
+
+
+
+              <!-- Button trigger modal -->
+<button type="button" class="m-2 btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#editprofiledata">
+     Edit Profile
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="editprofiledata" tabindex="-1" aria-labelledby="editprofiledata" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editprofiledata">Your Profile</h5>
+        <button type="button" class="btn-close" ></button>
+      </div>
+      <div class="modal-body">
+        <form   [formGroup]="EditForm" (ngSubmit)="ClientData(EditForm)">
+         
+
+
+
+
+
+          <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3"formControlName="name">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" formContolName="email" formControlName="email" >
+            </div>
+          </div>
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+                <label class="form-check-label" for="gridRadios1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" >
+                <label class="form-check-label" for="gridRadios2">
+                  Female
+                </label>
+              </div>
+             
+            </div>
+          </fieldset>
+          <div class="row mb-3">
+            <div class="row g-3">
+              <div class="col-sm-7">
+                <input type="date" class="form-control" placeholder="yy-mm--dd" aria-label="date" formControlName="birthday">
+              </div>
+              <div class="col-sm">
+                <input type="text" class="form-control" placeholder="job" aria-label="job" formControlName="job_title">
+              </div>
+              <div class="col-sm">
+                <input type="phone" class="form-control" placeholder="phone" aria-label="phone" formControlName="phone">
+              </div>
+            </div>
+          </div>
+
+         
+        <label for="exampleColorInput" class="form-label">background color</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color" formControlName="profile_background_color">
+<div class="modal-footer">
+        
+  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" >Save changes</button>   
+</div>
+</form>
+
+       
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+<button   (click)="logout()"  type=" button" class="m-2 btn btn-outline-danger"  data-bs-target="#editprofiledata">
+     logout
+</button>
+
+
+              
+
+          
+             
+              
+          </div>
+          
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+          <nav class="navbar navbar-dark navbar-expand-lg  bg-transparent py-4 px-4">
+            
+              <div class="d-flex align-items-center" id="menu-toggle">
+                  <i class= "fa-solid fa-link primary-text fs-4 me-3 ">
+                  
+                  </i>
+                  <h2 class="fs-2 m-0 ">All of your links are listed below</h2>
+                  <br>
+                  
+                  
+              </div>
+
+            
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      
+                          <p class="nav-link text-danger" >
+                              <i class="fas fa-user me-2 "></i>Welcome , {{name}}
+                  </p>
+                        
+                     
+                  </ul>
+              </div>
+          </nav>
+
+          
+
+             
+              <!-- from hereee -->
+
+              <div class="container-fluid g-0">
+               
+              
+                <div>
+              
+                <!-- MAIN CONTENT -->
+                <main >
+              
+                  <!-- TOOBAR TO ADD AND SEARCH Client -->
+                  <div class="toolbar">
+                   
+              
+                    <div class="add-employee m-2">
+                     
+                      <button  type="button" class="m-2 w-30 btn   btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" #addEmployeeButton>Add Link +</button>
+                    </div>
+              
+                   
+              
+                  </div>
+                 
+              
+                  <!-- AREA TO DISPLAY ALL THE EMPLOYEES -->
+                  <div class="employees m-3">
+              
+                    <!-- <div class="row mt-5">
+                      <div class="text-center m-5">
+                        <span class="text-secondary fs-2 fw-bold fst-italic" routerLink="customlink">
+                          There are no Links yet!
+                          
+                        </span>
+                      </div>
+                    </div> -->
+                    
+                    <div class="row mt-4 shadow">
+                      <div class="col">
+                        <app-client-info-show></app-client-info-show>
+
+                      </div>
+
+                    </div>
+              
+                   
+              
+                  </div>
+                </main>
+              </div>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add New Links</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+              
+                      <form>
+              
+                        <!-- FIRST NAME -->
+                        <div class=" Add-Custom  row m-1" >
+                          
+            <button type="submit"   class="btn btn-lg" data-bs-toggle="modal" href="#exampleModalToggle" >Custom Link +</button>
+                          
+                      
+                        
+            
+          </div>
+                         <!-- JOB INFORMATION -->
+                         <div class="row mt-5">
+                          <div class="col form-heading">
+                            <h6 class=" fst-italic">Or Choose From</h6>
+                          </div>
+                          
+                        </div>
+                        <div *ngFor="let x of linkDetails">
+              
+                        <div class="row m-1" >
+                          
+                          
+          
+<button  type="button" class="btn btn-lg " ><i class="{{x.icon}}"></i>
+                          {{x.title}}  </button>
+                          
+
+                          </div>
+                      
+                      </div>
+                       
+                    </form>
+            
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+                      
+<!--                        
+                          
+                    
+              
+              
+                     
+                        </div>
+                       
+                      </form>
+              
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            <!-- customLink form -->
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggle" >Add your Custom Link</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+
+
+     <form [formGroup]="LinksForm" (ngSubmit)="AddClientData(LinksForm)" >
+         
+         
+          
+            
+            
+      <select formControlName="icon">
+      
+        <option class= selected>Open this select menu</option>
+        <option value="fa-brands fa-facebook-f">
+        facebook 
+      </option>
+        <option value="fa-brands fa-twitter">Twitter</option>
+        <option value="fa-brands fa-youtube">Youtube</option>
+        <option value="fa-brands fa-instagram">Instagram</option>
+        <option value="fa-brands fa-whatsapp">Whatsapp</option>
+        <option value="fa-brands fa-linkedin">LinkedIn</option>
+      </select>
+      
+    
+    
+
+  
+      
+
+          
+           <!-- <label for="profile" class="form-label">Profile Image</label>
+           <input type="file"  (change)="getFile($event)"> -->
+           <div class="row mt-3">
+            <div class="col">
+        
+        <label for="exampleColorInput" class="form-label">background color</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color" formControlName="background_color">
+            </div>
+            </div>
+
+
+
+                          <div class="row">
+                            <div class="col">
+                              <label for="profile" class="m-1 form-label">Social Media Name</label>
+                              <input type="text" class="m-1 form-control" placeholder="Ex:facebook , etc" formControlName="title" >
+               
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col">
+                              <label for="profile" class="m-1 form-label">Social Link</label>
+                              <input type="text" class="m-1 form-control" placeholder="https:www.example.com" formControlName="link" >
+                             
+                         
+                            </div> 
+                              
+                          </div>
+                         
+                        <button type="submit" class=" m-3 btn" data-bs-dismiss="modal" aria-label="Close" >Save changes</button>
+                        
+              
+                    </form>
+            
+                    
+            
+                  
+                  
+                  
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+
+
+
+
+</div>
+</div>   
+             
+
+
+
+
+
+
+
+ 

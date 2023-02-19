@@ -1,0 +1,57 @@
+.home {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+h2{
+
+color: rgb(32, 250, 254);
+ font-size:xx-large; 
+
+font-family:cursive;
+
+font-style:italic;
+}
+
+
+@media all and (max-width:767px) {
+  h2{
+    font-size: 14px;
+   }
+
+  p {
+   font-size: 13px;
+  }
+
+  .main-btn{
+    padding: 5px 8px;
+  }
+}
+
+/* Desktop */
+@media all and (min-width:768px) {
+  h2{
+    font-size: 22px;
+   }
+  p {
+    font-size: 18px;
+   }
+   .main-btn{
+    padding: 12px 14px;
+   }
+}
+
+
+
+.main-btn{
+  background-color:rgb(32, 250, 254);
+  color:black;
+
+}
+.main-btn:hover{
+  background-color:black;
+  color: rgb(32, 250, 254);
+}
+

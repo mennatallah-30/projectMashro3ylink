@@ -1,0 +1,79 @@
+    <div id="homecon" [style]="HomeConStyle">
+    <div class="d-flex justify-content-start">
+        <img [src]="LOGOIMAGE.mylogo" class="d-flex " width="300" height="300"  alt="MY LOGO">
+    </div>  
+    <div *ngIf="PROFILE" id="profcon" class="container home">
+       <div class="container-fluid row">
+           <div class="col-md-6 col-sm-12">
+               <div class="px-lg-5 position-relative">
+                   <div class="pb-2 info-card">
+                       <div class="img-container">
+                           <div *ngIf="!PROFILE.profile_picture">
+                               <!-- Show alternative background -->
+                           </div>
+                           <img  *ngIf="PROFILE.profile_picture" [src]="PROFILE.profile_picture" alt="profile picture" />
+                       </div>
+                       <div class="pic text-md-center text-sm-start" style="padding-top: 5rem">
+    
+                           <div class="info">
+                               <h3 class="text-black text-capitalize">
+                                   {{ PROFILE.name }}
+                               </h3>
+                               <p class="text-black-50 text-capitalize">
+                                   {{ PROFILE.job_title}}
+                               </p>
+                               <p class="text-black-50">
+                                   {{ PROFILE.phone }}
+                               </p>
+                               <p class="text-black-50 text-capitalize">
+                                   {{PROFILE.bio}}
+                               </p>
+                           </div>
+                       </div>
+                       <div class="w3-container">
+                           <div class="w3-show-inline-block mt-5 mb-5 d-flex justify-content-center  ">
+                               <div class="w3-bar d-inline-block d-flex">
+                                   <a href="https://mashro3ylink.com/api/v1/clients/front/{{Username}}/vcard"
+                                       class="btn main-btn rounded-pill">
+                                       <i class="fa-regular fa-floppy-disk"></i>
+                                       Save contact</a>
+    
+                                   <button class="btn main-btn ms-3 rounded-pill d-md-inline-block "
+                                       (click)="shareButton()">
+                                       <i class="fa-solid fa-share"></i>
+                                       Share Me
+                                   </button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <div class="col-md-6 col-lg-5 col-sm-12 p-5">
+               <div class="row shadow icons-card h-100">
+                   <div class="col-4 social-media icon-container" *ngFor="let i of PROFILE.links">
+                       <div class="d-inline-block">
+                           <a class="d-block m-auto" href="{{ i.link }}" >
+                                <i   *ngIf="i.icon"  class="fa-2x {{i.icon}}" [style.color]="i.background_color"></i> 
+                               <img *ngIf="i.icon_image" id="i" [src]="i.icon_image" width="50px" height="50px">
+                           </a>
+                           <p class="text-center mb-2" [style.color]="i.text_color">
+                               {{ i.title }}
+                           </p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+    </div>
+    
+    <footer class="bg-light text-center text-lg-start  ">
+       <!-- Copyright -->
+       <div class="text-center p-3" style="background-color: var(--footer-color);">
+         © 2023 Copyright Mashro3ylink.com.ALL Rights Reserved
+    
+       </div>
+     </footer>
+    
