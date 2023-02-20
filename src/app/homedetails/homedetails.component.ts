@@ -80,7 +80,7 @@ export class HomedetailsComponent {
     if (navigator.share) {
       navigator
         .share({
-          url: 'this.href',
+          url: this.href,
         })
         .then(() => {
           console.log("success");
